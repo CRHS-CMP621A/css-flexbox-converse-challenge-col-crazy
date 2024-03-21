@@ -7,136 +7,162 @@
 
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  
 }
 
 /* Practice using CLASSES to style elements rather than ELEMENT selectors
 (and don't use ID# selectors) */
 
 /* .product - wraps the entire content */
+.info{
+  flex: 1;
+}
+
 .product {
   width: 825px;
-  /*border*/
-  /*margin*/
-  /*position*/
+  border: 4px solid black;
+  margin: 30px auto;
+  position: relative; /* required for other elements to use absolute */
+  flex: 1;
 }
 
 .title {
-  /*font-size*/
-  /*text-transform*/
-  /*text-aling*/
-  /*background-color*/
-  /*color*/
-  /*padding*/
+  font-size: 22px;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: #dddddd; /*grey*/
+  color: #020202; /*light grey*/
+  padding: 4px 0;
 }
 
 /* Product Information */
 .price {
-  /*font-size*/
-  /*font-weight*/
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .shipping {
-  /*text-transform*/
-  /*color*/
-  /*font-weight*/
-  /*font-size*/
+  text-transform: uppercase;
+  color: rgb(112, 112, 112);
+  font-weight: bold;
+  font-size: 14px;
 }
 
 /* style links always list all 4 states in order LVHA */
 /* here link and visited are same style */
 .more-info:link,
 .more-info:visited {
-  /*color*/
+  color: rgb(0, 0, 0); /*black*/
   display: inline-block;
-  /*margin*/
-  /*margin-top*/
+  margin-bottom: 30px;
+  margin-top: 15px;
 }
 
 /* apply style to both hover and active states */
 .more-info:hover,
 .more-info:active {
-  /*text-decoration*/
-  /*color*/
+  text-decoration: none;
+  color: #1d1d1d;
 }
 /*END of Product Information*/
 
 /* Product Details */
+.details{
+  flex: 1;
+}
+
 .details-title {
-  /*text-transform*/
-  /*font-size*/
-  /*margin-top*/
-  /*margin-bottom: 10px;*/
+  text-transform: uppercase;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 .details-list {
-  /*margin-left*/
-  /*margin-bottom*/
-  /*list-style: square;*/
-  /*line-height*/
+  margin-left: 20px;
+  margin-bottom: 15px;
+  list-style: square;
+  line-height: 1.5;
 }
 
 .details-list li {
-  /*margin-bottom*/
+  margin-bottom: 8px;
 }
 /*END of Product Details*/
 
 /*Add to Cart */
 .add-cart {
-  /*background-color*/
-  /*color*/
-  /*font-size*/
-  /*cursor*/
-  /*text-transform*/
+  background-color: #000; /*black*/
+  color: #fff; /*white*/
+  font-size: 16px;
+  cursor: pointer;
+  text-transform: uppercase;
   width: 100%;
 }
 
 /* add hover pseudo-class to .add-cart style */
 .add-cart:hover {
-  /*background-color*/
-  /*color*/
+  background-color: #fff;
+  color: #000;
 }
 /*END of Add to Cart*/
 
 /*Color Blocks*/
 .color {
-  /*background-color*/
+  background-color: #000; /*black*/
   width: 25px;
   height: 25px;
 }
 
 .color-red {
-  /*background-color*/
+  background-color: #ec2f2f; /*red*/
 }
 .color-blue {
-  /*background-color*/
+  background-color: #2224b2; /*blue*/
 }
 .color-yellow {
-  /*background-color*/
+  background-color: #f0bf1e; /*yellow*/
 }
 .color-green {
-  /*background-color*/
+  background-color: #0bff02; /*green*/
 }
 .color-brown {
-  /*background-color*/
+  background-color: #8a4c06; /*brown*/
 }
 /*End of Color Blocks */
 
 /*Sale in Corner*/
 .sale {
-  /*background-color*/
+  background-color: #ec2f2f; /*red*/
   display: inline-block; /* better way to set width */
-  /*color*/
-  /*letter-spacing*/
-  /*font-weight*/
-  /*text-transform*/
-  /*padding*/
+  color: #fff; /*white*/
+  letter-spacing: 2px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 7px 15px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  /*POSITIONING (Out-of-flow)*/
-  /*position*/
-  /*top*/
-  /*left*/
+  position: relative; /* required for other elements to use absolute */
+  position: absolute; /*must also set parent container to relative */
+  top: -20px;
+  left: -35px;
 }
 /*END of Sale*/
 
 /*Flexbox Layout*/
 /*Determine which classes need to be flex containers and which are flex items */
+.info-head{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.row{
+  display: flex;
+  gap: 30px;
+}
+.colors {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
